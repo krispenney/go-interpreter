@@ -23,7 +23,7 @@ func TestLetStatements(t *testing.T) {
   }
 
   if len(program.Statements) != 3 {
-    f.Fatalf("program.Statements does not contain 3 statements. got=%d",
+    t.Fatalf("program.Statements does not contain 3 statements. got=%d",
       len(program.Statements))
   }
 
@@ -61,7 +61,7 @@ func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
   }
 
   if letStmt.Name.TokenLiteral() != name {
-    f.Errorf("s.Name not '%s'. got=%s", name, letStmt.Name)
+    t.Errorf("s.Name not '%s'. got=%s", name, letStmt.Name)
     return false
   }
 
